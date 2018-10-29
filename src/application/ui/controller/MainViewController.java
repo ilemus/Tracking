@@ -1,15 +1,9 @@
 package application.ui.controller;
 
-import application.ui.StockAddPrompt;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 public class MainViewController {
     @FXML protected ListView<HBox> stock_list;
@@ -17,9 +11,10 @@ public class MainViewController {
     @FXML protected void onAddClicked(ActionEvent event) {
         System.out.println("Button Clicked");
         
-        StockAddPrompt sap = new StockAddPrompt();
-        sap.start(new Stage());
+        //StockAddPrompt sap = new StockAddPrompt();
+        //sap.start(new Stage());
         
+
         /*
         HBox listItem = new HBox();
         Text text = new Text();

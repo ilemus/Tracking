@@ -1,0 +1,25 @@
+Using Java FX the design is in stages (windows).
+Below list the sequence/features involved.
+
+1. Loading screen
+During the launching of the application it only needs to load cached data
+about user preferences (watchlist) and last received data.
+
+Additionally it can start requesting new data but that processing will
+occur after launch also.
+*---------*
+| Loading |
+| [##___] |
+*---------*
+
+2. Main Screen
+Watch list which each element is a button to launch more functionality.
+Data can be updated based on user preference, from 10s - 1hr, default 1 min.
+*----------------------------------*
+|  Total Balance: $ XXX,XXX.XX     |
+|                                  |
+|  INTC $ 98.23 +5.0%    P/E   G   |
+|  AAPL $ 198.23 +1.0%   P/E   G   |
+|                                  |
+|           |   +    |             |
+*----------------------------------*
