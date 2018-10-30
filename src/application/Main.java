@@ -1,5 +1,7 @@
 package application;
 
+import java.util.HashSet;
+
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -13,11 +15,13 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
+import listener.TrackerAddListener;
 
 
 public class Main extends Application {
     private static final String TITLE = "Stock Tracker";
     private static final String VERSION = "1.0";
+    private HashSet<TrackerAddListener> mTrackerListeners = new HashSet<TrackerAddListener>();
     
 	@Override
 	public void start(Stage primaryStage) {
@@ -29,25 +33,6 @@ public class Main extends Application {
 	        primaryStage.setTitle(TITLE + " " + VERSION);
 			primaryStage.setScene(scene);
 			primaryStage.show();
-			
-			Popup popup = new Popup();
-			HBox enterText = new HBox();
-	        Label label = new Label("Ticker: ");
-	        label.setAlignment(Pos.CENTER_LEFT);
-	        TextField inputTicker = new TextField();
-	        enterText.getChildren().add(label);
-	        enterText.getChildren().add(inputTicker);
-	        enterText.setStyle("-fx-background-color: #FFFFFF;");
-	        popup.focusedProperty().addListener(new ChangeListener<Boolean>() {
-				@Override
-				public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldValue, Boolean newValue) {
-					System.out.println(String.format("old, new: %b, %b", oldValue, newValue));
-				}
-	        });
-	        popup.setX(200);
-	        popup.setY(300);
-			popup.getContent().add(enterText);
-			popup.show(scene.getWindow());
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

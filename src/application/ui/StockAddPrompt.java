@@ -37,6 +37,7 @@ public class StockAddPrompt extends Application {
                 // Windows carriage return, need case for linux/windows
                 if (event.getCharacter().charAt(0) == 13) {
                     ((Stage) inputTicker.getScene().getWindow()).close();
+                    
                     System.out.println("Closing window");
                 }
             }
