@@ -23,3 +23,22 @@ Data can be updated based on user preference, from 10s - 1hr, default 1 min.
 |                                  |
 |           |   +    |             |
 *----------------------------------*
+
+3. Search Screen
+Search based on Index, or search based on name of company.
+*------------*
+| T: ______  |
+|    AAPL    |
+|    NVDA    |
+*------------*
+
+4. Graph view
+Draw data (daily, weekly, monthly, yearly price history, earnings history, P/E, etc.
+*-------------*
+| |   /--\/   |
+| | \/        |
+| |________   |
+*-------------*
+
+4. Portfolio analysis
+Total, weighted average P/E, dividend yield, growth rate..?

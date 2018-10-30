@@ -1,6 +1,8 @@
 package application;
 
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
@@ -36,11 +38,14 @@ public class Main extends Application {
 	        enterText.getChildren().add(label);
 	        enterText.getChildren().add(inputTicker);
 	        enterText.setStyle("-fx-background-color: #FFFFFF;");
-	        popup.focusedProperty().addListener((obs, wasFocused, isNowFocused) -> {
-                if (! isNowFocused) {
-                    popup.hide();
-                }
-            });
+	        popup.focusedProperty().addListener(new ChangeListener<Boolean>() {
+				@Override
+				public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldValue, Boolean newValue) {
+					System.out.println(String.format("old, new: %b, %b", oldValue, newValue));
+				}
+	        });
+	        popup.setX(200);
+	        popup.setY(300);
 			popup.getContent().add(enterText);
 			popup.show(scene.getWindow());
 		} catch(Exception e) {
